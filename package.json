@@ -1,0 +1,22 @@
+{
+  "name": "wallpapers",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node app"
+  },
+  "description": "Test Node app using Angular.js and mansory.",
+  "author": {
+    "name": "psp"
+  },
+  "dependencies": {
+    "body-parser": "~1.5.2",
+    "express": "~4.7.2",
+    "method-override": "~2.1.2",
+    "morgan": "~1.2.2",
+    "sqlite-sync": "^0.3.6"
+  },
+  "engines": {
+    "node": "~6.10.x"
+  }
+}

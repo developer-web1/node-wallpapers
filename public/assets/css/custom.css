@@ -1,0 +1,7 @@
+header .logo-container {
+	margin-bottom: 40px;
+}
+
+header nav > ul ul {
+	padding-bottom: 20px;
+}

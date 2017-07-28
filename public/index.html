@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    <meta charset="utf-8">
+    <title>Wallpapers</title>
+
+    <!-- Begin Meta Tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="description" content="A Wallpapers using Node, Angular and mansory"/>
+    <meta name="keywords" content="Wallpapers, HTML, CSS, JavaScript, Responsive, Photography, Angular, Node, Mansory"/>
+    <meta name="author" content="PSP"/>
+    <!-- End Meta Tags -->
+
+    <link rel="icon" href="assets/images/favicon.ico" />
+
+    <!-- Begin Stylesheets -->
+    <link type="text/css" rel="stylesheet" href="assets/css/reset.css">
+    <link type="text/css" rel="stylesheet" href="assets/includes/entypo/style.css">
+    <link type="text/css" rel="stylesheet" href="assets/includes/icomoon/style.css">
+    <link type="text/css" rel="stylesheet" href="assets/includes/font_awesome/font-awesome.css">
+    <link type="text/css" rel="stylesheet" href="assets/js/jquery-ui/jquery-ui-1.10.3.custom.min.css">
+    <link type="text/css" rel="stylesheet" href="assets/js/flexslider/style.css">
+    <link type="text/css" rel="stylesheet" href="assets/js/custom-scroll/mCustomScrollbar.css">
+    <link type="text/css" rel="stylesheet" href="assets/css/animate.min.css">
+    <link type="text/css" rel="stylesheet" href="assets/js/Magnific-Popup/magnific-popup.css">
+    <link type="text/css" rel="stylesheet" href="assets/css/style.css" id="main-style">
+    <link type="text/css" rel="stylesheet" href="assets/css/custom.css" id="main-style">
+    <!-- End Stylesheets -->
+
+    <!-- Begin JavaScript ( rest of Javascript after footer area) -->
+    <script type="text/javascript" src="assets/js/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/js/migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="assets/js/modernizr-respond.js"></script>
+    <!-- End JavaScript -->
+	</head>
+	<!-- End Head -->
+
+	<!-- Begin Body -->
+	<body id="WallpapersApp" ng-app="wallpapersApp" ng-controller="WallpapersController">
+
+		<!-- Begin Header -->
+    <header>
+			<div class="header-container">
+
+				<div class="header-inner">
+
+					<a href="#" class="close-btn">
+						<span class="close"></span>
+					</a>
+
+					<a href="index.html" class="logo-container">
+						<img src="assets/images/logo.png" alt="" >
+					</a>
+
+					<nav>
+						<ul>
+							<li>
+								<a href="#" class="active" data-category="0">HOME</a>
+							</li>
+							<li ng-repeat="root_cat in categories">
+								<a href="#" data-category="{{root_cat.id}}">
+									{{root_cat.name}}
+									<span class="arrow-down icon1-angle-down"></span>
+								</a>
+								<ul>
+									<li ng-repeat="sub_cat in root_cat.sub_cats">
+										<a href="#" data-category="{{sub_cat.id}}">{{sub_cat.name}}</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="page-contact.html">CONTACT</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+
+			</div>
+    </header>
+
+    <div class="header-bar active">
+
+			<a href="#" class="menu-nav">
+				<span></span>
+			</a>
+
+			<a href="index.html" class="logo-mini"><img src="assets/images/logo-mini.png" alt=""></a>
+
+			<a href="index.html" class="logo-mobile"><img src="assets/images/logo-mobile.png" alt=""></a>
+
+    </div>
+    <!-- End Header -->
+
+		<div class="gallery-grid cols-4">
+			<div class="gallery-wrapper clearfix" masonry="" load-images="true">
+        <div ng-repeat="image in images" class="masonry-brick gallery-item animated" data-animation="fadeIn" data-animation-delay="{{image.delay}}" data-id="{{image.id}}">
+          <img src="//developerweb.000webhostapp.com/wallpapers{{image.thumb}}" alt="">
+					<a href="//developerweb.000webhostapp.com/wallpapers{{image.original}}" class="overlay"></a>
+					<a href="#" class="icon1-heart-empty"></a>
+					<a href="#" class="icon1-heart"></a>
+					<p class="love">{{image.like}}</p>
+        </div>
+      </div>
+      <div scroll-trigger="loadImage()" threshold="100"></div>
+    </div>
+
+		<!-- Begin JavaScript -->
+    <script type="text/javascript" src="assets/js/jquery-ui/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="assets/js/SmoothScroll.js"></script>
+    <script type="text/javascript" src="assets/js/scrollTo-min.js"></script>
+    <script type="text/javascript" src="assets/js/easing.1.3.js"></script>
+    <script type="text/javascript" src="assets/js/appear.js"></script>
+    <script type="text/javascript" src="assets/js/jflickrfeed.min.js"></script>
+    <script type="text/javascript" src="assets/js/flexslider/flexslider.min.js"></script>
+    <script type="text/javascript" src="assets/js/fancybox/jquery.fancybox.pack.js"></script>
+    <script type="text/javascript" src="assets/js/isotope.min.js"></script>
+    <script type="text/javascript" src="assets/js/queryloader2.min.js"></script>
+    <script type="text/javascript" src="assets/js/gmap.min.js"></script>
+    <script type="text/javascript" src="assets/js/custom-scroll/mCustomScrollbar.min.js"></script>
+    <script type="text/javascript" src="assets/js/fitvids.js"></script>
+    <script type="text/javascript" src="assets/js/Magnific-Popup/magnific-popup.min.js"></script>
+
+		<script src="assets/js/masonry/dist/masonry.pkgd.min.js"></script>
+    <script src="assets/js/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/js/angular/angular.min.js"></script>
+    <script src="assets/js/angular-masonry/angular-masonry.js"></script>
+    <script src="assets/js/scripts.js"></script>
+		<script src="assets/js/wallpapers.js"></script>
+
+  </body>
+
+</html>
